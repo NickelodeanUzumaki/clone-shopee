@@ -6,17 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fake Shopee</title>
   <!-- link all the css file for used -->
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
   <!-- logo shopee -->
   <link rel="icon" href="/assets/img/shopee.png" />
   <!-- for the font style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
   <!-- link the fonts -->
-  <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.6.0/css/all.min.css" />
-</head>
+  <!-- <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.6.0/css/all.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+</head>
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal--open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .auth-form {
+    display: none;
+  }
+
+  .modal--open #modal__login {
+    display: block;
+  }
+
+  .modal--open #modal__register {
+    display: block;
+  }
+
+</style>
 <body>
   <!-- BEM = Block Element Mofifier -->
   <div class="app">
@@ -125,9 +156,10 @@
             <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">
               Đăng kí
             </li>
-            <li class="header__navbar-item header__navbar-item--strong">
+            <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separates" id="loginBtn">
               Đăng nhập
             </li>
+            
           </ul>
         </nav>
 
@@ -186,7 +218,7 @@
     <div class="modal__body">
 
       <!-- Register form (Login) -->
-      <div class="auth-form">
+      <div id="modal__register" class="auth-form">
         <div class="auth-form__container">
           <div class="auth-form__header">
             <h3 class="auth-form__heading">Đăng kí</h3>
@@ -238,7 +270,7 @@
       </div>
 
       <!-- Login form -->
-      <div class="auth-form">
+      <div id="modal__login" class="auth-form">
         <div class="auth-form__container">
           <div class="auth-form__header">
             <h3 class="auth-form__heading">Đăng Nhập</h3>
@@ -287,11 +319,11 @@
       </div>
     </div>
   </div>
-
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
     // Selectors for modal triggers
-    var registerBtn = document.querySelector('.header__navbar-item--strong:nth-of-type(1)');
-    var loginBtn = document.querySelector('.header__navbar-item.header__navbar-item--strong:nth-of-type(2)');
+    var registerBtn = document.querySelector('.header__navbar-item--separate');
+    var loginBtn = document.querySelector('.header__navbar-item--separates');
 
     // Selectors for modal elements
     var showModal = document.querySelector('.js-modal');
@@ -299,61 +331,60 @@
     var modalLogin = document.getElementById('modal__login');
 
     // Modal overlay and switch buttons
-    var hideModals = document.querySelectorAll('.modal__overlay');
-    var switchRegister = document.querySelector('.js-register');
-    var switchLogin = document.querySelector('.js-login');
+    var hideModalOverlay = document.querySelector('.modal__overlay');
+    var switchRegister = document.querySelector('#modal__login .auth-form__switch-btn');
+    var switchLogin = document.querySelector('#modal__register .auth-form__switch-btn');
+
+    // Back buttons to close modal
+    var backButtons = document.querySelectorAll('.js-back-form');
 
     // Show the registration modal
-    registerBtn.onclick = function () {
-      showModal.classList.add('modal--open');
-      modalRegister.style.display = 'block';
-      modalLogin.style.display = 'none';
-    }
+    registerBtn.addEventListener('click', function () {
+        showModal.classList.add('modal--open');
+        modalRegister.style.display = 'block';
+        modalLogin.style.display = 'none'; // Hide login modal
+    });
 
     // Show the login modal
-    loginBtn.onclick = function () {
-      showModal.classList.add('modal--open');
-      modalLogin.style.display = 'block';
-      modalRegister.style.display = 'none';
-    }
+    loginBtn.addEventListener('click', function () {
+        showModal.classList.add('modal--open');
+        modalLogin.style.display = 'block';
+        modalRegister.style.display = 'none'; // Hide register modal
+    });
 
-    // Hide modals when clicking outside the modal content
-    showModal.onclick = function () {
-      showModal.classList.remove('modal--open');
-      modalRegister.style.display = 'none';
-      modalLogin.style.display = 'none';
-    }
+    // Switch to registration form from login
+    switchRegister.addEventListener('click', function () {
+        modalRegister.style.display = 'block';
+        modalLogin.style.display = 'none';
+    });
 
-    // Prevent clicks inside the modal content from closing the modal
-    for (var hideModal of hideModals) {
-      hideModal.onclick = function (event) {
-        event.stopPropagation();
-      }
-    }
+    // Switch to login form from registration
+    switchLogin.addEventListener('click', function () {
+        modalLogin.style.display = 'block';
+        modalRegister.style.display = 'none';
+    });
 
-    // Switch to registration form
-    switchRegister.onclick = function () {
-      modalRegister.style.display = 'block';
-      modalLogin.style.display = 'none';
-    }
+    // Close modal when clicking outside modal content
+    hideModalOverlay.addEventListener('click', function () {
+        showModal.classList.remove('modal--open');
+        modalRegister.style.display = 'none';
+        modalLogin.style.display = 'none';
+    });
 
-    // Switch to login form
-    switchLogin.onclick = function () {
-      modalLogin.style.display = 'block';
-      modalRegister.style.display = 'none';
-    }
+    // Close modal when clicking "Trở lại"
+    backButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            showModal.classList.remove('modal--open');
+            modalRegister.style.display = 'none';
+            modalLogin.style.display = 'none';
+        });
+    });
+});
 
-    // Function to apply dark or light mode
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        body.classList.add('dark-theme');
-        body.classList.remove('light-theme');
-      } else {
-        body.classList.add('light-theme');
-        body.classList.remove('dark-theme');
-      }
-    }
-  </script>
+</script>
+
+
+
 </body>
 
 </html>
