@@ -12,12 +12,105 @@
   list-style: none;
   padding-left: 0;
   margin: 4px 0 0 0;
+  display: flex;
 }
 
 .header__navbar-item {
   margin: 0 8px;
   position: relative;
   min-height: 26px;
+  z-index: 1;
+}
+
+/* for the avatar */
+.header__navbar-user {
+  display: flex;
+  justify-items: center;
+  position: relative;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+  display: block;
+  animation: fadeIn ease-in 0.1s;
+}
+
+/* ava img */
+.header__navbar-user-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__navber-user-name {
+  margin-left: 4px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* for the user menu after login */
+.header__navbar-user-menu {
+  position: absolute;
+  padding: 8px 0;
+  top: calc(100% + 4px);
+  right: 0;
+  width: 160px;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  list-style: none;
+  z-index: 1;
+  box-shadow: 0 1px 2px #e0e0e0;
+  display: none;
+}
+
+/* tạo lớp giả cho mũi tên*/
+.header__navbar-user-menu::before {
+  content: "";
+  border-width: 20px 27px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 0;
+  top: -28px;
+}
+
+.header__navbar-user-menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 56%;
+  height: 8px;
+}
+
+.header__navbar-user-item--seperate {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: #5cc5b9; /*cannot css*/
+}
+
+.header__navbar-user-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  padding: 4px 16px;
+  display: block;
+}
+
+/* create a margin for the first & last child */
+.header__navbar-user-menu a:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.header__navbar-user-menu a:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+/* for each item when we hover into */
+.header__navbar-user-item a:hover {
+  background-color: #fafafa;
 }
 
 /* open the QR close */
@@ -34,7 +127,7 @@
 .header__navbar-item,
 .header__navbar-item-link {
   display: inline-block;
-  font-size: 1.4rem; /* = 14px */
+  font-size: 1.3rem; /* = 13px */
   color: var(--white-color);
   text-decoration: none; /* remove the underline of text */
   font-weight: 300;
@@ -60,7 +153,7 @@
 }
 
 /* make a "|" line */
-.header__navvbar-item--separate::after {
+.header__navbar-item--separate::after {
   content: "";
   display: block;
   position: absolute;
@@ -74,6 +167,11 @@
 .header__navbar-icon-link {
   color: var(--white-color);
   text-decoration-line: none;
+}
+
+/* use this to select solely second child */
+.header__navbar-icon-link:nth-child(2) {
+  margin-left: 3px;
 }
 
 .header__navbar-icon {
@@ -140,13 +238,14 @@
   top: 118%;
   right: 0;
   width: 404px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--white-color);
   cursor: default;
-  transform-origin: calc(100%-20px) top; /* di chuyển cái tâm hiện ra thông báo */
+  transform-origin: calc(100% - 32px) top; /* di chuyển cái tâm hiện ra thông báo */
   animation: headerNotifyGrowth ease-in 0.2s; /* ko phai trinh duyet nao cung support */
   will-change: opacity, transform;
   display: none;
+  border-radius: 2px;
 }
 
 /* tạo lớp giả cho mũi tên*/
@@ -425,6 +524,11 @@
   width: 200px;
 }
 
+.header__logo-link {
+  text-decoration: none;
+  color: transparent;
+}
+
 .header__logo-img {
   width: 150px;
   /* the color of it, we put it directly in the HTML file */
@@ -444,7 +548,13 @@
 .header__cart {
   width: 150px;
   text-align: center; /* put it in the father's card, it will CSS the child's card */
-  color: var(--white-color);
+}
+
+.header__cart-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+  cursor: pointer;
 }
 
 .header__cart-icon {
@@ -453,16 +563,184 @@
   margin-top: 6px;
 }
 
-.header__search-input {
+.header__cart-wrap:hover .header__cart-list {
+  display: block;
+}
+
+.header__cart-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 1px;
+  background-color: #fdfdfd;
+  width: 400px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: fadeIn ease-in 0.2s;
+  cursor: default;
+}
+
+/* added item - shopping cart list */
+.header__cart-heading {
+  text-align: left;
+  margin: 8px 0 8px 12px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.header__cart-list-item {
+  padding-left: 0;
+  list-style: none;
+}
+
+.header__cart-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__cart-item:hover {
+  background-color: #f8f8f8;
+}
+
+.header__cart-img {
+  width: 42px;
+  height: 42px;
+  margin: 12px;
+  border: 1px solid #e8e8e8;
+}
+
+.header__cart-item-info {
+  width: 100%;
+  margin-right: 12px;
+}
+
+.header__cart-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__cart-item-name {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+  text-align: left;
+}
+
+.header__cart-item-price {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.header__cart-item-multiply {
+  font-size: 0.9rem;
+  margin: 0 4px;
+  color: #757575;
+}
+
+.header__cart-item-qnt {
+  color: #757575;
+  font-size: 1.2rem;
+}
+
+.header__cart-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__cart-item-description {
+  color: #757575;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.header__cart-item-remove {
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.header__cart-item-remove:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header__cart-view-cart {
+  float: right;
+  margin: 0 12px 12px 0;
+}
+
+.header__cart-view-cart:hover {
+  background-color: #f05d41;
+}
+
+/* create a sudo class */
+.header__cart-list::after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: -26px;
+  border-width: 16px 20px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+}
+
+.header__cart-list--no-cart {
+  padding: 24px 0;
+}
+
+.header__cart-list--no-cart .header__cart-no-cart-img,
+.header__cart-list--no-cart .header__cart-list-no-cart-msg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* shopping no cart img */
+.header__cart-no-cart-img {
+  width: 55%;
+  display: none;
+}
+
+.header__cart-list-no-cart-msg {
+  display: none;
+  font-size: 1.4rem;
+  margin-top: 14px;
+  color: var(--text-color);
+}
+
+.header__cart-notice {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  padding: 1px 7px;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  border-radius: 10px;
+  border: 2px solid #ee4d2d;
+}
+
+/* search input */
+.header__search-input-wrap {
   flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.header__search-input {
   width: 100%;
   height: 100%;
   border: none;
   outline: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   padding: 0 16px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .header__search-select {
@@ -490,7 +768,7 @@
   border: none;
   height: 34px;
   width: 60px;
-  border-radius: 3px;
+  border-radius: 2px;
   margin-right: 3px;
   outline: none;
 }
@@ -513,12 +791,12 @@
 .header__search-option {
   position: absolute;
   right: 0;
-  top: 100%;
+  top: calc(100% - 1px);
   width: 130px;
   list-style: none;
   box-shadow: 0 1px 2px #e0e0e0;
   padding-left: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   display: none;
   animation: fadeIn ease-in 0.2s;
 }
@@ -539,13 +817,13 @@
 }
 
 .header__search-option-item:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 .header__search-option-item:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .header__search-option-item:hover {
@@ -569,7 +847,189 @@
   display: inline-block;
 }
 
-/* This class will make the modal visible */
-.modal--open {
+/* show a search history dropdown or suggestions when the user focuses (clicks or tabs into) a search input field */
+.header__search-input:focus ~ .header__search-history {
+  display: block;
+}
+
+/* search history */
+.header__search-history {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: calc(100% - 16px);
+  background-color: var(--white-color);
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgb(189, 189, 189);
+  display: none;
+  overflow: hidden;
+}
+
+/* heading search bar */
+.header__search-history-heading {
+  margin: 8px 12px;
+  font-size: 1.4rem;
+  color: #999;
+  font-weight: 300;
+}
+
+/* for the search item list */
+.header__search-history-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 6px 0 0;
+}
+
+/* for the search item */
+.header__search-history-item {
+  height: 38px;
+  padding: 0 12px;
+}
+
+/* to make it feel like the user is selecting it */
+.header__search-history-item:hover {
+  background-color: #fafafa;
+}
+
+.header__search-history-item a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 38px;
+  color: var(--text-color);
+  display: block;
+}
+
+/* app container */
+.app__container {
+  background-color: #f5f5f5;
+}
+
+.app__content {
+  padding-top: 36px;
+}
+
+.category {
+  background-color: var(--white-color);
+  border-radius: 2px;
+}
+
+.category__heading {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  padding: 12px 16px;
+  margin-top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category__heading-icon {
+  font-size: 1.4rem;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+}
+
+.category-list {
+  padding: 0 0 8px 0;
+  list-style: none;
+  margin-left: 9px;
+}
+
+.category-item--active .category-item__link {
+  color: var(--primary-color);
+}
+
+.category-item--active .category-item__link::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* 50% cua thang chua no */
+  left: 7px;
+  border: 4px solid;
+  transform: translateY(calc(-50% - 1px)); /* 50% cua chinh no */
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+.category-item__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  padding: 4px 16px;
+  display: block;
+  transition: right linear 0.1s;
+  right: 0;
+}
+
+.category-item__link:hover {
+  color: var(--primary-color);
+  right: -4px;
+}
+
+/* Home content (sort + filter) */
+.home-filter {
   display: flex;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.home-filter__label {
+  color: #555;
+  font-size: 1.4rem;
+  margin-right: 16px;
+}
+
+.home-filter__btn {
+  min-width: 90px;
+  margin-right: 12px;
+}
+
+.home-filter__page {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.home-filter__page-num {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-right: 22px;
+}
+
+.home-filter__page-current {
+  color: var(--primary-color);
+}
+
+.home-filter__page-control {
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  width: 72px;
+  height: 36px;
+}
+
+.home-filter__page-btn {
+  flex: 1;
+  display: flex;
+  background-color: var(--white-color);
+  text-decoration: none;
+}
+
+.home-filter__page-btn--disable {
+  background-color: #f9f9f9;
+  cursor: default;
+}
+
+.home-filter__page-btn--disable .home-filter__page-icon {
+  color: #ccc;
+}
+
+.home-filter__page-btn:first-child {
+  border-right: 1px solid #eee;
+}
+
+.home-filter__page-icon {
+  margin: auto;
+  font-size: 1.4rem;
+  color: #555;
 }
