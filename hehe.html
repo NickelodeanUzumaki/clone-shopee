@@ -159,7 +159,7 @@
               Đăng kí
             </li>
 
-            <!-- add "id" for easier -->
+             add "id" for easier -->
             <!--<li class="header__navbar-item header__navbar-item--strong header__navbar-item--separates" id="loginBtn">
               Đăng nhập
             </li> -->
@@ -183,7 +183,7 @@
                 </li>
 
                 <li class="header__navbar-user-item header__navbar-user-item--seperate">
-                  <a href="">Đăng xuất</a>
+                  <a href="" class="logout-link">Đăng xuất</a>
                 </li>
               </ul>
             </li>
@@ -227,6 +227,10 @@
                   <li class="header__search-history-item">
                     <a href="#">Kem dưỡng trắng</a>
                   </li>
+
+                  <li class="header__search-history-item">
+                    <a href="#">Cách có Sharingan cho người không phải Uchiha</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -261,14 +265,14 @@
 
               <!-- No cart: header__cart-list--no-cart -->
               <div class="header__cart-list">
-                <img src="./assets/img/cart-empty.png" alt="" class="header__cart-no-cart-img">
+                <img src="/assets/img/item1.png" alt="" class="header__cart-no-cart-img">
                 <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
 
                 <h4 class="header__cart-heading">Sản Phẩm Đã Thêm</h4>
                 <ul class="header__cart-list-item">
                   <!-- shopping cart item -->
                   <li class="header__cart-item">
-                    <img src="/assets/img/item1.jpeg" alt="" class="header__cart-img">
+                    <img src="/assets/img/item1.png" alt="" class="header__cart-img">
 
                     <!-- the father class of the added item -->
                     <div class="header__cart-item-info">
@@ -278,7 +282,7 @@
                         <h5 class="header__cart-item-name">Mũ Hoa Dễ Thương Cho Bé Thoáng Khí Ren Cotton</h5>
 
                         <div class="header__cart-item-price-wrap">
-                          <span class="header__cart-item-price">100,000 VND</span>
+                          <span class="header__cart-item-price">100,000đ</span>
                           <span class="header__cart-item-multiply">x</span>
                           <span class="header__cart-item-qnt">2</span>
                         </div>
@@ -295,7 +299,7 @@
 
                   <!-- shopping cart item -->
                   <li class="header__cart-item">
-                    <img src="/assets/img/item2.jpeg" alt="" class="header__cart-img">
+                    <img src="/assets/img/item2.png" alt="" class="header__cart-img">
 
                     <!-- the father class of the added item -->
                     <div class="header__cart-item-info">
@@ -305,7 +309,7 @@
                         <h5 class="header__cart-item-name">Kệ Để Laptop - Lắp Ghép Tiện Ích</h5>
 
                         <div class="header__cart-item-price-wrap">
-                          <span class="header__cart-item-price">5,000 VND</span>
+                          <span class="header__cart-item-price">5,000đ</span>
                           <span class="header__cart-item-multiply">x</span>
                           <span class="header__cart-item-qnt">1</span>
                         </div>
@@ -322,7 +326,7 @@
 
                   <!-- shopping cart item -->
                   <li class="header__cart-item">
-                    <img src="/assets/img/item3.jpeg" alt="" class="header__cart-img">
+                    <img src="/assets/img/item3.png" alt="" class="header__cart-img">
 
                     <!-- the father class of the added item -->
                     <div class="header__cart-item-info">
@@ -332,7 +336,7 @@
                         <h5 class="header__cart-item-name">Bao Tay Chơi Game</h5>
 
                         <div class="header__cart-item-price-wrap">
-                          <span class="header__cart-item-price">10,000 VND</span>
+                          <span class="header__cart-item-price">10,000đ</span>
                           <span class="header__cart-item-multiply">x</span>
                           <span class="header__cart-item-qnt">2</span>
                         </div>
@@ -380,6 +384,18 @@
                 <li class="category-item">
                   <a href="#" class="category-item__link">Doreamon lỏ</a>
                 </li>
+
+                <li class="category-item">
+                  <a href="#" class="category-item__link">Bài học IT vỡ lòng</a>
+                </li>
+
+                <li class="category-item">
+                  <a href="#" class="category-item__link">Dép siêu nhân</a>
+                </li>
+
+                <li class="category-item">
+                  <a href="#" class="category-item__link">Mạc bục</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -387,22 +403,18 @@
           <!-- for the content -->
           <div class="grid__column-10">
             <div class="home-filter">
-              <span class="home-filter__label">Sắp xếp theo</span>
+              <span class="home-filter__title">Sắp xếp theo</span>
               <button class="home-filter__btn btn">Phổ biến</button>
               <button class="home-filter__btn btn btn--primary">Mới nhất</button>
               <button class="home-filter__btn btn">Bán chạy</button>
-
               <div class="select-input">
                 <span class="select-input__label">Giá</span>
                 <i class="select-input__icon fas fa-angle-down"></i>
-
-                <!-- list option -->
                 <ul class="select-input__list">
                   <li class="select-input__item">
                     <a href="" class="select-input__link">Giá: Thấp đến cao</a>
                   </li>
-
-                  <li class="header-input__item">
+                  <li class="select-input__item">
                     <a href="" class="select-input__link">Giá: Cao đến thấp</a>
                   </li>
                 </ul>
@@ -410,26 +422,679 @@
 
               <div class="home-filter__page">
                 <span class="home-filter__page-num">
-                  <span class="home-filter__page-current">1</span>/14
+                  <span class="home-filter__page-num-current">
+                    1
+                  </span>/14
                 </span>
-
                 <div class="home-filter__page-control">
-                  <a href="" class="home-filter__page-icon home-filter__page-btn home-filter__page-btn--disable">
-                    <i class="fas fa-angle-left"></i>
+                  <a href="" class="home-filter__page-btn home-filter__page-btn--disable">
+                    <i class="home-filter__page-icon fas fa-angle-left"></i>
                   </a>
-
-                  <a href="" class="home-filter__page-icon home-filter__page-btn">
-                    <i class="fas fa-angle-right"></i>
+                  <a href="" class="home-filter__page-btn">
+                    <i class="home-filter__page-icon fas fa-angle-right"></i>
                   </a>
                 </div>
               </div>
             </div>
+
+            <!-- UI for the product -->
+            <div class="home-product">
+              <div class="grid__row">
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item" href="#">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://i.pinimg.com/564x/aa/ec/de/aaecde9b253c2fe13cb5797f382d212d.jpg);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Làm Naruto lỏ của Trái Đất ăn Ramen qua ngày</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">1,200,000đ</span>
+                      <span class="home-product-item__price-current">1,111,111đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 88</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Leaf Village</span>
+                      <span class="home-product-item__origin-name">Japan</span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">10%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item" href="#">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-7rdve-lzq271uyhovcca.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Crayon Shin-chan Điện Thoại Di Động Đứng Hoạt Hình Trang Trí Dễ
+                      Thương Để Bàn Trang Trí Giá Đỡ Điện Thoại Quà Tặng Tiếp</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">25,000đ</span>
+                      <span class="home-product-item__price-current">17,500đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 100</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Shinnosuke</span>
+                      <span class="home-product-item__origin-name">
+                        Hà Nội
+                      </span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">30%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/Bao-Tay-Ch%C6%A1i-Game-ch%C6%A1i-Pubg-Li%C3%AAn-Qu%C3%A2n...-G%C4%83ng-tay-ch%C6%A1i-game-Ch%E1%BB%91ng-M%E1%BB%93-H%C3%B4i-Si%C3%AAu-Nh%E1%BA%A1y-Co-Gi%C3%A3n-C%E1%BB%B1c-T%E1%BB%91t-B%E1%BA%A3o-H%C3%A0nh-1-n%C4%83m-i.1066851844.25958300935?sp_atk=a3a39f25-96b7-43f7-bc3a-8eb08adcc4dc&xptdk=a3a39f25-96b7-43f7-bc3a-8eb08adcc4dc"
+                    target="_blank">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lqfnhaateqev9b.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Bao Tay Chơi Game chơi Pubg, Liên Quân... Găng tay chơi game
+                      Chống Mồ Hôi, Siêu Nhạy, Co Giãn Cực Tốt Bảo Hành 1 năm</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">6,240đ</span>
+                      <span class="home-product-item__price-current">4,992đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 180</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Gamepad</span>
+                      <span class="home-product-item__origin-name">
+                        Thừa Thiên Huế
+                      </span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">20%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/T%C3%BAi-%C4%90eo-Ch%C3%A9o-Canvas-C%E1%BB%A1-L%E1%BB%9Bn-Th%E1%BB%9Di-Trang-H%C3%A0n-Qu%E1%BB%91c-H%E1%BB%8Dc-Sinh-Sinh-Vi%C3%AAn-i.241516322.3136439011?xptdk=e6ccf31d-30db-4491-907e-fd0e8030f3e4">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/f818bbc77da5841dd51166663d5ce8ee.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Túi Đeo Chéo Canvas Cỡ Lớn Thời Trang Hàn Quốc Học Sinh Sinh
+                      Viên</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">190,000đ</span>
+                      <span class="home-product-item__price-current">129,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 16k</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">No Brand</span>
+                      <span class="home-product-item__origin-name">Trung Quốc</span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">30%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/(HCM-H%E1%BB%8Fa-t%E1%BB%91c-2h)-G%E1%BA%A5u-b%C3%B4ng-Capybara-K%C3%A9o-Ch%E1%BA%ADm-Rung-cute-d%E1%BB%85-th%C6%B0%C6%A1ng-size-25-35-45-55cm-Eda's-House-i.158928547.24775955668">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lv4rfng5eniy9f.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Gấu bông Capybara Kéo Chậm + Rung, cute dễ thương size 25 - 35 -
+                      45 - 55cm Eda's House</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">110,000đ</span>
+                      <span class="home-product-item__price-current">97,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 400</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Eda's House</span>
+                      <span class="home-product-item__origin-name">Việt Nam</span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">10%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/B%E1%BB%99t-Matcha-Nguy%C3%AAn-Ch%E1%BA%A5t-H%E1%BB%AFu-C%C6%A1-COZY-200G-D%C3%B9ng-Trong-Pha-Ch%E1%BA%BF-L%C3%A0m-B%C3%A1nh-V%C3%A0-L%C3%A0m-%C4%90%E1%BA%B9p-Da-Th%C6%A1m-V%E1%BB%8B-Tr%C3%A0-Xanh-Thi%C3%AAn-Nhi%C3%AAn-i.268452626.23651214996">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-7rdxd-m006qjnna02tc7.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Bột Matcha Nguyên Chất Hữu Cơ COZY 200G Dùng Trong Pha Chế, Làm
+                      Bánh Và Làm Đẹp Da, Thơm Vị Trà Xanh Thiên Nhiên</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">164,000đ</span>
+                      <span class="home-product-item__price-current">135,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 9,5K</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Cozy</span>
+                      <span class="home-product-item__origin-name">
+                        Việt Nam</span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">18%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/Tr%C3%A2m-C%C3%A0i-%C3%81o-Kim-Lo%E1%BA%A1i-H%C3%ACnh-L%C3%A1-C%E1%BB%9D-Vi%E1%BB%87t-Nam-i.780945167.20550787064?sp_atk=a2f3236f-51ea-4566-bbca-72cbffa9471d&xptdk=a2f3236f-51ea-4566-bbca-72cbffa9471d">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22090-p8zdedd6a3hvcd.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Trâm Cài Áo Kim Loại Hình Lá Cờ Việt Nam</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">10,000đ</span>
+                      <span class="home-product-item__price-current">6,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 8,7k</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">MTTQ VN</span>
+                      <span class="home-product-item__origin-name">Việt Nam</span>
+                    </div>
+
+                    <!-- <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div> -->
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">40%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/T%C3%BAi-tote-t%C3%BAi-v%E1%BA%A3i-canvas-phong-c%C3%A1ch-H%C3%A0n-qu%E1%BB%91c-c%C3%B3-kh%C3%B3a-mi%E1%BB%87ng-ng%C4%83n-ph%E1%BB%A5-b%C3%AAn-trong-th%E1%BB%9Di-trang-ulzzang-Haka-store-i.178471663.7685039278">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ll94ido3ag8mbb.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Túi tote túi vải canvas phong cách Hàn quốc, có khóa miệng ngăn
+                      phụ bên trong thời trang ulzzang-Haka store</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">58,000đ</span>
+                      <span class="home-product-item__price-current">35,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 115,6k</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">ulzzang</span>
+                      <span class="home-product-item__origin-name">Hà Nội
+                      </span>
+                    </div>
+
+                    <!-- <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div> -->
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">40%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/X%C3%AD-X%E1%BB%8Dn-Decor-B%E1%BB%99-8-M%C3%B4-h%C3%ACnh-Pokemon-M%E1%BA%AFt-To-Pika-Charmander-Squirtle-D%E1%BB%85-Th%C6%B0%C6%A1ng-%C4%90%E1%BB%93-Trang-Tr%C3%AD-Pokemon-Ng%E1%BB%99-Ngh%C4%A9nh-B%E1%BB%99-S%C6%B0u-T%E1%BA%ADp-i.1291850115.29509012052">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzbqa50jzgrl52.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Xí Xọn Decor Bộ 8 Mô hình Pokemon Mắt To Pika Charmander
+                      Squirtle Dễ Thương Đồ Trang Trí Pokemon Ngộ Nghĩnh Bộ Sưu Tập</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">35,000đ</span>
+                      <span class="home-product-item__price-current">35,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 38</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Pikachu</span>
+                      <span class="home-product-item__origin-name">Hà Nội</span>
+                    </div>
+
+                    <!-- <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div> -->
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">KO</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="grid__column-2-4">
+                  <!-- product item -->
+                  <a class="home-product-item"
+                    href="https://shopee.vn/B%E1%BB%8Dc-Ch%E1%BB%91ng-X%C6%B0%E1%BB%9Bc-Chip-CCCD-C%C4%83n-C%C6%B0%E1%BB%9Bc-C%C3%B4ng-D%C3%A2n-T%C3%BAi-Nh%E1%BB%B1a-%C4%90%E1%BB%B1ng-CMND-ATM-Ch%E1%BB%91ng-Tr%E1%BA%A7y-Trong-Su%E1%BB%91t-C%C3%B3-N%E1%BA%AFp-B%E1%BA%A3o-V%E1%BB%87-Th%E1%BA%BB-i.958835129.21275349648?sp_atk=37ba86f0-d649-4cba-b364-f9b3e4dcc4b3&xptdk=37ba86f0-d649-4cba-b364-f9b3e4dcc4b3">
+                    <div class="home-product-item__img"
+                      style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134201-23030-40qmpz2evcovc5.webp);">
+                    </div>
+
+                    <h4 class="home-product-item__name">Bọc Chống Xước Chip CCCD Căn Cước Công Dân, Túi Nhựa Đựng CMND,
+                      ATM, Chống Trầy Trong Suốt Có Nắp Bảo Vệ Thẻ</h4>
+
+                    <div class="home-product-item__price">
+                      <span class="home-product-item__price-old">2,000đ</span>
+                      <span class="home-product-item__price-current">1,000đ</span>
+                    </div>
+
+                    <!-- action like like and heart -->
+                    <div class="home-product-item__action">
+                      <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                      </span>
+                      <div class="home-product-item__rating">
+                        <!-- 5 star -->
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                        <i class="home-product-item__star-gold fas fa-star"></i>
+                      </div>
+
+                      <span class="home-product-item__sold">Đã bán 31,7k</span>
+                    </div>
+
+                    <div class="home-product-item__origin">
+                      <span class="home-product-item__brand">Đang cập nhật</span>
+                      <span class="home-product-item__origin-name">Việt Nam</span>
+                    </div>
+
+                    <div class="home-product-item__favorite">
+                      <i class="fas fa-check"></i>
+                      <span>Yêu thích</span>
+                    </div>
+
+                    <div class="home-product-item__sale-off">
+                      <span class="home-product-item__sale-off-percent">50%</span>
+                      <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- number of page -->
+            <ul class="pagination home-product__pagination">
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">
+                  <i class="pagination-item__icon fas fa-angle-left"></i>
+                </a>
+              </li>
+
+              <li class="pagination-item pagination-item--active">
+                <a href="" class="pagination-item__link">1</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">2</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">3</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">4</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">5</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">...</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">14</a>
+              </li>
+
+              <li class="pagination-item">
+                <a href="" class="pagination-item__link">
+                  <i class="pagination-item__icon fas fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="grid">
+        <div class="grid__row">
+          <div class="grid__column-2-4">
+            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+            <ul class="footer__list">
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Trung Tâm Trợ Giúp</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">F8-shop Mall</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Hướng Dẫn Mua Hàng</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid__column-2-4">
+            <h3 class="footer__heading">Giới thiệu</h3>
+            <ul class="footer__list">
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Giới Thiệu</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Tuyển dụng</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Điều khoản</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid__column-2-4">
+            <h3 class="footer__heading">Danh mục</h3>
+            <ul class="footer__list">
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Trang điểm Ninja</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Ốp lưng PUBG</a>
+              </li>
+              <li class="footer-item">
+                <a href="" class="footer-item__link">Sách Java cho IT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid__column-2-4">
+            <h3 class="footer__heading">Theo dõi</h3>
+            <ul class="footer__list">
+              <li class="footer-item">
+                <a href="" class="footer-item__link">
+                  <i class="footer-item__icon fab fa-facebook"></i>
+                  Facebook</a>
+              </li>
+
+              <li class="footer-item">
+                <a href="" class="footer-item__link">
+                  <i class="footer-item__icon fab fa-instagram"></i>
+                  Instagram</a>
+              </li>
+
+              <li class="footer-item">
+                <a href="" class="footer-item__link">
+                  <i class="footer-item__icon fab fa-linkedin"></i>
+                  Linkedln</a>
+              </li>
+            </ul>
+          </div>
+          <div class="grid__column-2-4">
+            <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+            <div class="footer__download">
+              <img src="/assets/img/qrcode.png" alt="Download QR=" class="footer__download-qr">
+              <div class="footer__download-apps">
+                <a href="" class="footer__download-app-link">
+                  <img src="/assets/img/android.png" alt="Google play" class="footer__download-app-img">
+                </a>
+
+                <a href="" class="footer__download-app-link">
+                  <img src="/assets/img/apple.png" alt="App store" class="footer__download-app-img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- copyright -->
+      <div class="footer__bottom">
+        <div class="grid">
+          <p class="footer__text">© 2024 - Bản quyền thuộc về F8-Shop và Phong Cách bởi Nickelodean Uzumaki. All
+            rights reserved</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <!-- Modal layout -->
@@ -602,6 +1267,17 @@
         });
       });
     });
+
+    // Action like to be change color (default to be filled)
+    let likeElement = document.querySelector(".home-product-item__like");
+
+    likeElement.onclick = function () {
+      if (this.classList.contains("home-product-item__like--liked")) {
+        this.classList.remove("home-product-item__like--liked");
+      } else {
+        this.classList.add("home-product-item__like--liked");
+      }
+    };
   </script>
 </body>
 
