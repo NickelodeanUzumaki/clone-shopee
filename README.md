@@ -1,3 +1,49 @@
 # Cloning Website - Shopee Việt Nam
-This is a cloned website of [Shopee]([url](https://shopee.vn/)) Việt Nam
-This is a fake (clone) shopee file that I learned from F8 Shop - HTML CSS từ Zero đến Hero
+
+- This is a cloned website of [Shopee Việt Nam](https://shopee.vn/)
+- This is a fake (clone) shopee file that I learned from F8 Shop - HTML CSS từ Zero đến Hero
+
+# ✍️Description
+
+- The purpose of doing this web is to practice `HTML`, `CSS`, `JavaScript` and `Web Responsive` (not really lol)
+
+# 💻 Technology
+
+`HTML`, `CSS`, `JavaScript`
+
+# 📸 Some preview images
+
+This is when a user logged in and liked some items (in my code, user can like whatever items they like)
+<img width="1437" alt="Screenshot 2024-09-16 at 11 27 18 AM" src="https://github.com/user-attachments/assets/72d9a0c9-f08f-44c0-bc5a-e76e9565a8fe">
+<img width="1419" alt="Screenshot 2024-09-16 at 11 26 55 AM" src="https://github.com/user-attachments/assets/226e1063-5dcd-4bfb-9eeb-6dd6e6cb8cbf">
+
+And this is when a user have not log in yet
+
+They can sign up
+<img width="868" alt="Screenshot 2024-09-16 at 11 35 57 AM" src="https://github.com/user-attachments/assets/45b62bf7-fbeb-45cb-a37f-cd2e93408765">
+Or sign in
+<img width="875" alt="Screenshot 2024-09-16 at 11 37 05 AM" src="https://github.com/user-attachments/assets/f475f2bf-e115-4f4c-9771-9124cf3f96ee">
+
+Header Search and Shopping cart also
+<img width="1426" alt="Screenshot 2024-09-16 at 11 32 48 AM" src="https://github.com/user-attachments/assets/c4cf06c1-7a92-42a7-af97-1d3b0c7472b4">
+
+I made the "Đăng xuất" icon to be a bit special (bold and change color when hover)
+<img width="443" alt="Screenshot 2024-09-16 at 11 34 10 AM" src="https://github.com/user-attachments/assets/d4f4bd20-eb2c-416a-a023-8bcabe42314f">
+
+# 📍 Links
+
+- Solution URL: [Github](https://github.com/NickelodeanUzumaki/clone-shopee/tree/main)
+- Live Site URL: don't have nuh uh. This is because if I upload to github page to host, it will crash some properties and I have so change it so I'm kinda lazy tho
+
+# 📚 Learn more
+
+- I learned to do this web in [F8 - Học lập trình để đi làm](https://fullstack.edu.vn/)
+- To learn more about HTML, CSS and JavaScript, you can check out [W3Schools](https://www.w3schools.com/)
+
+# ✔️ License & Copyright
+
+© 2024 - Copyright belongs to [F8](https://fullstack.edu.vn/) and Improvised by Nickelodean Uzumaki. All rights reserved
+
+> 🤟 Feel free to use my repository and star it if you find something interesting 🤟
+
+> 📩 DM me when you need help on anything with this project
