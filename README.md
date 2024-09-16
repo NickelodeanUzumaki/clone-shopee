@@ -6,6 +6,7 @@
 # ✍️Description
 
 - The purpose of doing this web is to practice `HTML`, `CSS`, `JavaScript` and `Web Responsive` (not really lol)
+- This project has the logo for the website and an interesting name lol
 
 # 💻 Technology
 
@@ -14,7 +15,7 @@
 # 📸 Some preview images
 
 This is when a user logged in and liked some items (in my code, user can like whatever items they like)
-<img width="1437" alt="Screenshot 2024-09-16 at 11 27 18 AM" src="https://github.com/user-attachments/assets/72d9a0c9-f08f-44c0-bc5a-e76e9565a8fe">
+<img width="1426" alt="Screenshot 2024-09-16 at 11 42 36 AM" src="https://github.com/user-attachments/assets/cb53bb84-f527-4a23-8d7e-5e88faa18820">
 <img width="1419" alt="Screenshot 2024-09-16 at 11 26 55 AM" src="https://github.com/user-attachments/assets/226e1063-5dcd-4bfb-9eeb-6dd6e6cb8cbf">
 
 And this is when a user have not log in yet
@@ -23,6 +24,9 @@ They can sign up
 <img width="868" alt="Screenshot 2024-09-16 at 11 35 57 AM" src="https://github.com/user-attachments/assets/45b62bf7-fbeb-45cb-a37f-cd2e93408765">
 Or sign in
 <img width="875" alt="Screenshot 2024-09-16 at 11 37 05 AM" src="https://github.com/user-attachments/assets/f475f2bf-e115-4f4c-9771-9124cf3f96ee">
+
+To download the app for Fake Shopee
+<img width="712" alt="Screenshot 2024-09-16 at 11 43 04 AM" src="https://github.com/user-attachments/assets/db056682-c328-4a31-b020-29f0c93dc243">
 
 Header Search and Shopping cart also
 <img width="1426" alt="Screenshot 2024-09-16 at 11 32 48 AM" src="https://github.com/user-attachments/assets/c4cf06c1-7a92-42a7-af97-1d3b0c7472b4">
