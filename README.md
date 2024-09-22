@@ -52,7 +52,7 @@ For Responsive (view on mobile img)
 Because this one I'm learning to make it so it won't work so good like a real real website. I didn't change the logic driectly, I just commented it so it will easier to unlock the code and copy it with the JavaScript
 
 - You will have to click on the `hehe.html` to run otherwise it will crash because it contain the README file and the image too.
-- Enable to code from line 1219 to 1249 if you wanna see the register and log in card
+- Enable to code from line 1219 to 1249 ish (I don't even remember, please try to find) if you wanna see the register and log in card
 - Default is when the user logged in
 - I have disable the file `reset.css` because I'm doing the responsive with the grid (2 more files in the CSS)
 - There are a few class that has the name changed because I'm doing responsive, so don't expect you will find all the class the same like the one we are doing in the course **"HTML & CSS: From Zero to Hero"** lol
