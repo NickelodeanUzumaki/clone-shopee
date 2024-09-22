@@ -1,3 +1,11 @@
+body {
+  margin: 0; /* This will override the default user agent margin */
+}
+
+.app {
+  overflow: hidden;
+}
+
 .header {
   height: var(--header-height);
   background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -529,6 +537,16 @@
   margin: 0 8px;
 }
 
+.header__mobile-search {
+  padding: 0 12px;
+  display: none;
+}
+
+.header__mobile-search-icon {
+  font-size: 2.6rem;
+  color: var(--white-color);
+}
+
 .header__logo {
   width: 200px;
 }
@@ -536,6 +554,12 @@
 .header__logo-link {
   text-decoration: none;
   color: transparent;
+  display: block;
+  line-height: 0;
+}
+
+.header__search-checkbox:checked ~ .header__search {
+  display: flex;
 }
 
 .header__logo-img {
@@ -564,6 +588,7 @@
   display: inline-block;
   padding: 0 12px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -602,7 +627,7 @@
 .header__cart-list-item {
   padding-left: 0;
   list-style: none;
-  height: 33vh;
+  max-height: 56vh;
   overflow-y: auto;
 }
 
@@ -646,7 +671,7 @@
   padding-right: 16px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  line-clamp: 2; /* it will limit the number of lines of text and provide cross-browser compatibility without needing the -webkit- prefix. */
+  -webkit-line-clamp: 2; /* it will limit the number of lines of text and provide cross-browser compatibility without needing the -webkit- prefix. */
 }
 
 .header__cart-item-price {
@@ -862,6 +887,7 @@
   font-size: 1.2rem;
   color: var(--primary-color);
   margin-left: 12px;
+  display: none;
 }
 
 .header__search-option-item--active i {
@@ -919,6 +945,71 @@
   line-height: 38px;
   color: var(--text-color);
   display: block;
+}
+
+/* Header sort bar */
+.header__sort-bar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  height: var(--header-sort-bar-height);
+  background-color: var(--white-color);
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  display: none;
+}
+
+.header__sort-item {
+  flex: 1;
+}
+
+.header__sort-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: block;
+  height: 100%;
+  line-height: var(--header-sort-bar-height);
+  text-align: center;
+  position: relative;
+}
+
+.header__sort-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 60%;
+  border-left: 1px solid #e5e5e5;
+  transform: translateY(-50%);
+}
+
+.header__sort-item--active .header__sort-link {
+  color: var(--primary-color);
+}
+
+/* We target .header__sort-link::after instead of .header__sort-item--active::after because:
+(Go to chatGPT for clear explaination)
+Positioning: It places the line directly under the link text, aligning it perfectly.
+Width Control: The line will match the width of the text, not the entire list item.
+Semantics: It logically enhances the clickable link, rather than the list item container.
+This ensures better alignment and behavior for the underline effect. */
+.header__sort-item--active .header__sort-link::after {
+  content: "";
+  position: absolute; /* This ensures the line is positioned relative to the parent .header__sort-link */
+  bottom: 0; /* Position the line at the bottom of the link */
+  left: 0;
+  width: 100%; /* Make the line span the entire width of the link */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: var(--primary-color); /* Line color */
+}
+
+.header__sort-item:first-child .header__sort-link::before {
+  display: none;
 }
 
 /* app container */
@@ -1001,6 +1092,64 @@
 .category-item__link:hover {
   color: var(--primary-color);
   right: -4px;
+}
+
+/* Mobile category */
+.mobile-category {
+  display: none;
+}
+
+.mobile-category__list {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-category__item {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+/* first item */
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+  background-color: #87afd8;
+}
+
+/* second item */
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+  background-color: #76c9bd;
+}
+
+/* third item */
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+
+.mobile-category__link {
+  --line-height: 2rem;
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.4rem;
+  line-height: var(--line-height);
+  text-align: center;
+  width: 110px;
+  height: calc(var(--line-height) * 2);
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-radius: 4px;
+  font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 0 6px;
 }
 
 /* Home content (sort + filter) */
@@ -1121,7 +1270,7 @@
   display: block;
   display: -webkit-box; /* hien dau 3 cham cho trinh duyet co webkit box*/
   -webkit-box-orient: vertical;
-  line-clamp: 2; /* hien dau 3 chau ... */
+  -webkit-line-clamp: 2; /* hien dau 3 chau ... */
   text-overflow: ellipsis;
 }
 
@@ -1277,6 +1426,7 @@ i.home-product-item__like-icon-fill {
 
 .home-product__pagination {
   margin: 48px 0 32px 0;
+  padding-left: 0;
 }
 
 /* Footer */
